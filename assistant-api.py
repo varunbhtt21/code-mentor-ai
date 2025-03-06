@@ -11,7 +11,7 @@ client = OpenAI()
 
 # Configure page settings
 st.set_page_config(
-    page_title="Code Mentor AI (Assistant API)",
+    page_title="JAZZEE Code Mentor AI (Assistant API)",
     page_icon="🤖",
     layout="wide"
 )
@@ -96,7 +96,7 @@ def main():
     assistant = create_assistant()
 
     # Header
-    st.title("🤖 Code Mentor AI (Assistant API)")
+    st.title("🤖 JAZZEE Code Mentor AI ") # (Assistant API)
     st.markdown("### Your Personal Programming Guide")
     
     # Description
