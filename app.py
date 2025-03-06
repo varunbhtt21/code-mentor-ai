@@ -35,23 +35,25 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def get_ai_mentor_response(code):
-    # Crafting a prompt that encourages learning rather than giving direct solutions
     prompt = f"""
-    As a coding mentor, analyze this code:
-    
+    Analyze this code and respond ONLY in this format:
+
+    CODE TO ANALYZE:
     {code}
+
+    PROBLEMS IN YOUR CODE:
+    1. Simple problem description (Example: "Your loop starts from wrong number" or "You forgot to check negative numbers")
+    2. Another problem if found (Example: "Program crashes when input is zero")
     
-    Please:
-    1. Don't provide direct solutions
-    2. Guide the student to think about:
-       - What test cases they should consider
-       - Potential edge cases
-       - Where bugs might occur
-    3. Ask thought-provoking questions that will help them debug their own code
-    4. Provide hints and suggestions for improvement
-    5. Encourage good coding practices
+    TRY RUNNING WITH:
+    1. Try this input: [give exact number or string to test]
+    What should happen: [simple explanation]
+    What actually happens: [simple explanation]
     
-    Format your response in a structured, easy-to-read way.
+    SMALL HINT TO FIX:
+    • Write hint in very simple words (Example: "Check what happens when input is 5" or "Try printing value of x inside loop")
+
+    Use simple English. Explain like you're talking to a beginner. Give concrete examples.
     """
     
     try:
